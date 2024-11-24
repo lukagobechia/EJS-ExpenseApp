@@ -37,7 +37,20 @@
                     Expense</button>
             </form>
 
-            <h2>Expense List</h2>
+
+            <div class="expense-list-headings">
+
+                <h2>Total Expense <span style="color: red;">$<%= slicedExpense.reduce((total, expense)=> total +
+                            Number(expense.price), 0) %></span> </h2>
+                <div class="expense-list">
+                    <h2>Expense List</h2>
+                    <select name="sort" id="sort" disabled>
+                        <option value="by date" selected>By date</option>
+                        <option value="by price">By price</option>
+                    </select>
+                </div>
+
+            </div>
             <table id="expense-table">
                 <thead>
                     <tr>

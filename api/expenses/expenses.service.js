@@ -24,6 +24,7 @@ export const getExpenses = async (req, res) => {
     } else if (page > totalPages) {
       page = totalPages;
     }
+    parsedExpenses.sort((a, b) => new Date(b.date) - new Date(a.date));
     const slicedExpense = parsedExpenses.slice((page - 1) * take, take * page);
     res.status(200).render("pages/expenses.ejs", { slicedExpense });
   } catch (error) {

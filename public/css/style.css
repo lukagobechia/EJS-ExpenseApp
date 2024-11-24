@@ -1,129 +1,151 @@
-        /* CSS styles */
-        body {
-          font-family: 'Arial', sans-serif;
-          line-height: 1.6;
-          margin: 0;
-          padding: 0;
-          background-color: #f4f4f4;
-          display: flex;
-          flex-direction: column;
-          min-height: 100vh;
-      }
-      header {
-          background-color: #333;
-          color: #fff;
-          text-align: center;
-          padding: 1rem;
-      }
-      header h1 {
-          margin: 0;
-      }
-      nav ul {
-          padding: 0;
-          list-style-type: none;
-      }
-      nav ul li {
-          display: inline;
-          margin-right: 10px;
-      }
-      nav ul li a {
-          color: #fff;
-          text-decoration: none;
-      }
-      .container {
-          max-width: 800px;
-          margin: 20px auto;
-          background-color: #fff;
-          padding: 20px;
-          border-radius: 8px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-          flex-grow: 1;
-      }
-      h2 {
-          text-align: center;
-          color: #333;
-      }
-      form {
-          display: grid;
-          gap: 10px;
-          margin-bottom: 20px;
-      }
-      label {
-          font-weight: bold;
-          color: #555;
-      }
-      input, select {
-          width: 100%;
-          padding: 8px;
-          border: 1px solid #ddd;
-          border-radius: 4px;
-          box-sizing: border-box;
-      }
-      button,a {
-          padding: 10px 15px;
-          background-color: #4CAF50;
-          color: white;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          transition: background-color 0.3s;
-      }
-      a {
-        text-decoration: none;
-      }
-      button:hover,a:hover {
-          background-color: #45a049;
-      }
-      table {
-          width: 100%;
-          border-collapse: collapse;
-          margin-top: 20px;
-      }
-      th, td {
-          padding: 12px;
-          text-align: left;
-          border-bottom: 1px solid #ddd;
-      }
-      th {
-          background-color: #f2f2f2;
-          font-weight: bold;
-          color: #333;
-      }
-      .action-buttons {
-          display: flex;
-          gap: 5px;
-      }
-      .update-btn {
-          background-color: #2196F3;
-      }
-      .save-btn {
-        background-color: #4CAF50;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+body {
+  font-family: "Ubuntu", serif;
+  font-weight: 100;
+  font-style: normal;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+header h1 {
+  margin: 0;
+}
+nav ul {
+  padding: 0;
+  list-style-type: none;
+}
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+}
+h2 {
+  color: #333;
+}
+form {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+label {
+  font-weight: bold;
+  color: #555;
+}
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+button,
+a {
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+a {
+  text-decoration: none;
+}
+button:hover,
+a:hover {
+  background-color: #45a049;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+}
+.action-buttons {
+  display: flex;
+  gap: 5px;
+}
+.update-btn {
+  background-color: #2196f3;
+}
+.save-btn {
+  background-color: #4caf50;
+}
+.save-btn:hover {
+  background-color: #3e8c40;
+}
+.update-btn:hover {
+  background-color: #0b7dda;
+}
+.details-btn {
+  background-color: rgb(249, 168, 17);
+}
+.details-btn:hover {
+  background-color: rgb(211, 143, 15);
+}
+.delete-btn {
+  background-color: #f44336;
+}
+.delete-btn:hover {
+  background-color: #da190b;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
 
-      }
-      .save-btn:hover {
-        background-color: #3e8c40;
+.expense-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-      }
-      .update-btn:hover {
-          background-color: #0b7dda;
-      }
-      .details-btn{
-        background-color: rgb(249, 168, 17);
+.expense-list select {
+  width: 100px;
+}
 
-      }
-      .details-btn:hover{
-        background-color: rgb(211, 143, 15);
-      }
-      .delete-btn {
-          background-color: #f44336;
-      }
-      .delete-btn:hover {
-          background-color: #da190b;
-      }
-      footer {
-          background-color: #333;
-          color: #fff;
-          text-align: center;
-          padding: 1rem;
-          margin-top: auto;
-      }
+.expense-list-headings {
+  display: flex;
+  flex-direction: column;
+}
+.expense-list-headings h2 {
+  width: max-content;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 5px;
+}

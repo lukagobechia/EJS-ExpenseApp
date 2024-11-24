@@ -5,5 +5,26 @@
     "price": "80",
     "paymentMethod": "credit-card",
     "date": "2024-11-24T17:07:59.528Z"
+  },
+  {
+    "id": 2,
+    "category": "Dinner",
+    "price": "15",
+    "paymentMethod": "cash",
+    "date": "2024-11-24T19:22:49.862Z"
+  },
+  {
+    "id": 3,
+    "category": "transportation",
+    "price": "5.25",
+    "paymentMethod": "cash",
+    "date": "2024-11-24T19:45:20.575Z"
+  },
+  {
+    "id": 4,
+    "category": "shopping",
+    "price": "50",
+    "paymentMethod": "credit-card",
+    "date": "2024-11-24T19:58:01.217Z"
   }
 ]
