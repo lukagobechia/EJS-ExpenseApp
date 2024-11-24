@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Expense Tracker</title>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+        <div class="container">
+            <h2>Manage Expense</h2>
+
+            <form id="expense-form">
+                <label for="category">Category:</label>
+                <input type="text" id="category">
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" step="0.01" min="0" required>
+
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" required>
+                    <option value="">Select a payment method</option>
+                    <option value="cash">Cash</option>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="debit-card">Debit Card</option>
+                    <option value="bank-transfer">Bank Transfer</option>
+                    <option value="apple-pay">Apple Pay</option>
+                    <option value="google-pay">Google Pay</option>
+                </select>
+
+                <button type="button" id="add-button" onclick="handlePost()" style="display: block;">Add
+                    Expense</button>
+                <button type="button" id="main update-button" onclick="handleUpdate()" style="display: none;">Update
+                    Expense</button>
+            </form>
+
+            <h2>Expense List</h2>
+            <table id="expense-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Payment Method</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (slicedExpense.length===0) { %>
+                        <tr>
+                            <td style="text-align: center; color: gray;">Empty</td>
+                        </tr>
+                        <% } else { %>
+                            <% slicedExpense.forEach(expense=> { %>
+                                <tr>
+                                    <td class="category">
+                                        <%= expense.category %>
+                                    </td>
+                                    <td class="price">
+                                        <%= expense.price %>
+                                    </td>
+                                    <td class="payment-method">
+                                        <%= expense.paymentMethod %>
+                                    </td>
+                                    <td class="action-buttons">
+                                        <button onclick="prepareUpdate('<%= expense.id %>')"
+                                            class="update-btn">Update</button>
+                                        <a href="expenses/details/<%= expense.id %>" class="details-btn">details</a>
+                                        <button onclick="handleDelete('<%= expense.id %>')"
+                                            class="delete-btn">Delete</button>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        <%- include('../partials/footer.ejs') %>
+            <script src="/js/expenses.js"></script>
+</body>
+
+</html>

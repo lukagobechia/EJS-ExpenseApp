@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Expense Details</title>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+        <div class="container">
+            <h2>Expense Details</h2>
+            <div class="expense-details">
+
+                <label for="category">ID:</label>
+                <input type="text" id="id" value="<%= expense.id %>" disabled>
+
+                <label for="category">Category:</label>
+                <input type="text" id="category" value="<%= expense.category %>" disabled>
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" min="0" value="<%= expense.price %>" required disabled>
+
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" required disabled>
+                    <option value="">Select a payment method</option>
+                    <option value="cash" <%=expense.paymentMethod==='cash' ? 'selected' : '' %>>Cash</option>
+                    <option value="credit-card" <%=expense.paymentMethod==='credit-card' ? 'selected' : '' %>>Credit
+                        Card</option>
+                    <option value="debit-card" <%=expense.paymentMethod==='debit-card' ? 'selected' : '' %>>Debit Card
+                    </option>
+                    <option value="bank-transfer" <%=expense.paymentMethod==='bank-transfer' ? 'selected' : '' %>>Bank
+                        Transfer</option>
+                    <option value="apple-pay" <%=expense.paymentMethod==='apple-pay' ? 'selected' : '' %>>Apple Pay
+                    </option>
+                    <option value="google-pay" <%=expense.paymentMethod==='google-pay' ? 'selected' : '' %>>Google Pay
+                    </option>
+                </select>
+                <p><span class="label">Date created: </span> <span class="value">
+                        <%= formatDateFromISOString(expense.date) %>
+                    </span></p>
+            </div>
+            <div class="actions">
+                <button class="update-btn" style="display:inline-block;"
+                    onclick="prepareUpdate('<%=expense.id%>')">Edit</button>
+                <button class="save-btn" style="display: none;" onclick="handleUpdate('<%=expense.id%>')">Save</button>
+                <button class="delete-btn" onclick="handleDelete('<%=expense.id%>')">Delete</button>
+                <button onclick="handleBackToList()" class="back-btn">Back to List</button>
+            </div>
+        </div>
+        <%- include('../partials/footer.ejs') %>
+            <script src="/js/details.js"></script>
+
+</body>
+
+</html>
